@@ -1,0 +1,187 @@
+.signup-page {
+  min-height: 100vh;
+  background: white;
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.signup-container {
+  background-color: purple;
+  border-radius: 20px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 700px;
+}
+
+.signup-image-section {
+  position: relative;
+  background: linear-gradient(135deg, var(--primary-purple), var(--dark-purple));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:white;
+  overflow: hidden;
+}
+
+.image-content {
+  position: absolute;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem;
+}
+
+.image-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.image-content p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.signup-image-section img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+}
+
+.signup-form-section {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto;
+   /* Makes text readable on purple */
+}
+
+.signup-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.signup-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.signup-header p {
+  color:white;
+  font-size: 1rem;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.name-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.password-input {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: dark purple;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+
+
+
+.error-message {
+  color: #dc3545;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  display: block;
+}
+
+.form-group input.error {
+  border-color: #dc3545;
+}
+
+.signup-btn {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: white;
+}
+
+.login-link a {
+  color: var(--primary-purple);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .signup-page {
+    padding: 1rem;
+  }
+
+  .signup-container {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+
+  .signup-image-section {
+    min-height: 200px;
+    order: 2;
+  }
+
+  .signup-form-section {
+    padding: 2rem;
+    order: 1;
+  }
+
+  .signup-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .name-group {
+    grid-template-columns: 1fr;
+  }
+
+  .image-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .image-content p {
+    font-size: 1rem;
+  }
+
+  
+
+}
