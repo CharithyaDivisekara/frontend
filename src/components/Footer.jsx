@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaFacebook,FaInstagram,FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
@@ -34,7 +34,7 @@ const Footer = () => {
           <div className="footer-section">
             <h4>Customer Service</h4>
             <ul>
-              <li><a href="#">Track Your Order</a></li>
+            
               <li><a href="#">Returns & Exchanges</a></li>
               <li><a href="#">Shipping Info</a></li>
             </ul>
@@ -67,7 +67,6 @@ const Footer = () => {
         <div className="footer-bottom">
           <p>&copy; 2024 Eshop. All rights reserved.</p>
           <div className="footer-links">
-            <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>
             <a href="#">Cookie Policy</a>
           </div>

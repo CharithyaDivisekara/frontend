@@ -65,7 +65,7 @@
   height: 40px;
   background-color: (6, 71, 31, 0.1);
   border-radius: 50%;
-  color: var(--whit)e;
+  color:purple;
   font-size: 1.2rem;
   transition: all 0.3s ease;
 }
@@ -73,6 +73,7 @@
 .social-links a:hover {
   background-color: var(--accent-purple);
   transform: translateY(-2px);
+;
 }
 
 .contact-info {
@@ -89,49 +90,11 @@
 }
 
 .contact-item svg {
-  color: var(--accent-purple);
+  color: purple;
   font-size: 1.1rem;
   flex-shrink: 0;
 }
 
-.newsletter {
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 2rem;
-  border-radius: 10px;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.newsletter h4 {
-  color: purple;
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
-}
-
-.newsletter p {
-  margin-bottom: 1.5rem;
-  opacity: 0.9;
-}
-
-.newsletter-form {
-  display: flex;
-  max-width: 400px;
-  margin: 0 auto;
-  gap: 1rem;
-}
-
-.newsletter-form input {
-  flex: 1;
-  padding: 12px;
-  border: none;
-  border-radius: 25px;
-  font-size: 16px;
-}
-
-.newsletter-form button {
-  border-radius: 25px;
-  white-space: nowrap;
-}
 
 .footer-bottom {
   display: flex;
@@ -155,7 +118,7 @@
 
 .footer-links a:hover {
   opacity: 1;
-  color: purple;
+  color: rgb(88, 2, 88);
 }
 
 @media (max-width: 992px) {

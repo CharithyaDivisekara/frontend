@@ -43,13 +43,23 @@
 }
 
 .login-form {
+  width: 100%;
   display: flex;
+  position: relative;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
+  color: white;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
 .password-input {
   position: relative;
+  width: 100%;
+  
 }
 
 .password-toggle {
@@ -59,7 +69,7 @@
   transform: translateY(-50%);
   background: none;
   border: none;
-  color: #6c757d;
+  color:white;
   cursor: pointer;
   font-size: 1.1rem;
 }
@@ -88,6 +98,7 @@
   padding: 15px;
   font-size: 1.1rem;
   margin-top: 1rem;
+  
 }
 
 .login-btn {

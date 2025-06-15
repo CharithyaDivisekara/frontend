@@ -37,14 +37,14 @@ const Home = () => {
           <h2 className="section-title">Shop by Category</h2>
           <div className="category-grid">
             <Link to="/women" className="category-card">
-              <img src="https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Women's Fashion" />
+              <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d29tZW4lMjBjbG90aGVzfGVufDB8fDB8fHww" alt="Women's Fashion" />
               <div className="category-overlay">
                 <h3>Women's Collection</h3>
                 <p>Elegant & Trendy</p>
               </div>
             </Link>
             <Link to="/men" className="category-card">
-              <img src="https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Men's Fashion" />
+              <img src="https://t3.ftcdn.net/jpg/03/34/79/68/240_F_334796865_VVTjg49nbLgQPG6rgKDjVqSb5XUhBVsW.jpg" alt="Men's Fashion" />
               <div className="category-overlay">
                 <h3>Men's Collection</h3>
                 <p>Style & Comfort</p>
@@ -54,40 +54,15 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Featured Products */}
-      <section className="featured-products">
-        <div className="container">
-          <h2 className="section-title">Featured Products</h2>
-          <div className="products-grid">
-            {featuredProducts.map(product => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* New Arrivals */}
-      <section className="new-arrivals">
-        <div className="container">
-          <h2 className="section-title">New Arrivals</h2>
-          <div className="products-grid">
-            {newArrivals.map(product => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        </div>
-      </section>
+     
+      
+    
 
       {/* Newsletter */}
       <section className="newsletter-section">
         <div className="container">
           <div className="newsletter-content">
             <h2>Stay in Style</h2>
-            <p>Subscribe to our newsletter and be the first to know about new collections and exclusive offers!</p>
-            <form className="newsletter-form">
-              <input type="email" placeholder="Enter your email address" />
-              <button type="submit" className="btn btn-primary">Subscribe</button>
-            </form>
           </div>
         </div>
       </section>

@@ -6,13 +6,10 @@ import './Signup.css';
 const Signup = () => {
   const [formData, setFormData] = useState({
     firstName: '',
-    lastName: '',
     email: '',
     password: '',
     confirmPassword: '',
-    phone: '',
-    agreeToTerms: false,
-    subscribeNewsletter: true
+    
   });
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -40,12 +37,9 @@ const Signup = () => {
     const newErrors = {};
     
     if (!formData.firstName.trim()) {
-      newErrors.firstName = 'First name is required';
+      newErrors.firstName = 'Name is required';
     }
     
-    if (!formData.lastName.trim()) {
-      newErrors.lastName = 'Last name is required';
-    }
     
     if (!formData.email.trim()) {
       newErrors.email = 'Email is required';
@@ -53,6 +47,7 @@ const Signup = () => {
       newErrors.email = 'Email is invalid';
     }
     
+
     if (!formData.password) {
       newErrors.password = 'Password is required';
     } else if (formData.password.length < 8) {
@@ -62,11 +57,9 @@ const Signup = () => {
     if (formData.password !== formData.confirmPassword) {
       newErrors.confirmPassword = 'Passwords do not match';
     }
-    
-    if (!formData.agreeToTerms) {
-      newErrors.agreeToTerms = 'You must agree to the terms and conditions';
-    }
-    
+
+  
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -147,17 +140,8 @@ const Signup = () => {
                 {errors.email && <span className="error-message">{errors.email}</span>}
               </div>
 
-              <div className="form-group">
-                <label htmlFor="phone">Phone Number (Optional)</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  placeholder="Enter your phone number"
-                />
-              </div>
+           
+
 
               <div className="form-group">
                 <label htmlFor="password">Password</label>

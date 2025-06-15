@@ -25,6 +25,7 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <div className="header-content">
+
           {/* Logo */}
           <Link to="/" className="logo">
             <h2>eShop</h2>

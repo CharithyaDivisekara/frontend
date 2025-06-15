@@ -123,10 +123,7 @@
   opacity: 0.9;
 }
 
-.featured-products,
-.new-arrivals {
-  padding: 5rem 0;
-}
+
 
 .new-arrivals {
   background-color: var(--light-gray);
