@@ -22,7 +22,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/login" element={<Login/>} />
-            <Route path="/" element={<h1>Home</h1>} />
+            <Route path="/" element={<Home/>} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/men" element={<Men/>} />
             <Route path="/Women" element={<Women/>} />
