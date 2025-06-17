@@ -1,0 +1,26 @@
+.men-page {
+  padding: 2rem 0;
+}
+
+.page-hero {
+  background: purple;
+  color: white;
+  text-align: center;
+  padding: 4rem 0;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+}
+
+.page-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.page-hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  color: white;
+
+}

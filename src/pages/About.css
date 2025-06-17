@@ -1,0 +1,272 @@
+.about-page {
+   padding: 2rem 0;
+}
+
+.about-hero {
+  background:purple;
+  color: white;
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.our-story {
+  padding: 5rem 0;
+  background-color: white;
+}
+
+.story-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.story-text h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: purple;
+  margin-bottom: 2rem;
+}
+
+.story-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: purple;
+  margin-bottom: 1.5rem;
+}
+
+.story-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(123, 44, 191, 0.2);
+}
+
+.our-values {
+  padding: 5rem 0;
+  background-color:white;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: purple;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-purple), var(--accent-purple));
+  border-radius: 2px;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.value-card {
+  background-color: var(--white);
+  padding: 2.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(123, 44, 191, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(123, 44, 191, 0.2);
+}
+
+.value-icon {
+  width: 80px;
+  height: 80px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: purple;
+  font-size: 2rem;
+}
+
+.value-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.value-card p {
+  color:white;
+  line-height: 1.6;
+}
+
+.statistics {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, var(--primary-purple), var(--dark-purple));
+  color: var(--white);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+
+.stat-item h3 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--accent-purple);
+}
+
+.stat-item p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+
+.sustainability {
+  padding: 5rem 0;
+  background-color: white;
+}
+
+.sustainability-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.sustainability-text h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: purple;
+  margin-bottom: 2rem;
+}
+
+.sustainability-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: purple;
+  margin-bottom: 2rem;
+}
+
+.sustainability-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sustainability-text li {
+  padding: 0.8rem 0;
+  color: purple;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.sustainability-text li:before {
+  content: "*";
+  position: absolute;
+  color: purple;
+  left: 0;
+  top: 1rem;
+}
+
+.sustainability-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(123, 44, 191, 0.2);
+}
+
+@media (max-width: 992px) {
+  .story-content,
+  .sustainability-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .sustainability-content {
+    grid-template-rows: auto auto;
+  }
+
+  .sustainability-text {
+    order: 1;
+  }
+
+  .sustainability-image {
+    order: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 4rem 0;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .story-text h2,
+  .sustainability-text h2 {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-item h3 {
+    font-size: 2rem;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .value-card {
+    padding: 2rem;
+  }
+}

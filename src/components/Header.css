@@ -58,8 +58,8 @@
 
 .search-btn {
   padding: 12px 20px;
-  background-color: rgb(164, 17, 204);
-  color: var(--white);
+  background-color: purple;
+  color: white;
   border: none;
   border-radius: 0 25px 25px 0;
   cursor: pointer;
@@ -67,7 +67,7 @@
 }
 
 .search-btn:hover {
-  background-color: rgb(164, 18, 164);
+  background-color: rgb(127, 3, 127);
 }
 
 .nav {
