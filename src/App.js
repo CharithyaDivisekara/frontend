@@ -12,6 +12,8 @@ import Men from './pages/Men'
 import Women from './pages/Women';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import ProductDetails from './pages/ProductDetails';
+
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 function App() {
