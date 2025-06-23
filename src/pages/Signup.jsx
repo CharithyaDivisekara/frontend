@@ -9,7 +9,6 @@ const Signup = () => {
     email: '',
     password: '',
     confirmPassword: '',
-    
   });
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -23,7 +22,7 @@ const Signup = () => {
       ...formData,
       [name]: type === 'checkbox' ? checked : value
     });
-    
+
     // Clear error when user starts typing
     if (errors[name]) {
       setErrors({
@@ -35,53 +34,58 @@ const Signup = () => {
 
   const validateForm = () => {
     const newErrors = {};
-    
+
     if (!formData.firstName.trim()) {
       newErrors.firstName = 'Name is required';
     }
-    
-    
+
     if (!formData.email.trim()) {
       newErrors.email = 'Email is required';
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = 'Email is invalid';
     }
-    
 
     if (!formData.password) {
       newErrors.password = 'Password is required';
     } else if (formData.password.length < 8) {
       newErrors.password = 'Password must be at least 8 characters';
     }
-    
+
     if (formData.password !== formData.confirmPassword) {
       newErrors.confirmPassword = 'Passwords do not match';
     }
-
-  
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
-    
+
     setIsLoading(true);
-    
+
     try {
-      // Here you would typically make an API call to register
-      console.log('Signup attempt:', formData);
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Navigate to login page on successful signup
-      navigate('/login');
+      const response = await fetch('http://localhost:8080/api/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          email: formData.email,
+          password: formData.password
+        })
+      });
+
+      const result = await response.text();
+      if (result === "Signup successful") {
+        navigate('/login');
+      } else {
+        setErrors({ email: result });
+      }
     } catch (error) {
       console.error('Signup error:', error);
     } finally {
@@ -120,11 +124,8 @@ const Signup = () => {
                     placeholder="Enter your name"
                     className={errors.firstName ? 'error' : ''}
                   />
-                 
                 </div>
-                </div>
-
-                
+              </div>
 
               <div className="form-group">
                 <label htmlFor="email">Email Address</label>
@@ -139,9 +140,6 @@ const Signup = () => {
                 />
                 {errors.email && <span className="error-message">{errors.email}</span>}
               </div>
-
-           
-
 
               <div className="form-group">
                 <label htmlFor="password">Password</label>
