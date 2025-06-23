@@ -2,6 +2,7 @@ import React from 'react'
 import './Men.css';
 import { FaFilter } from 'react-icons/fa';
 import { useState } from 'react';
+import { productService } from '../services/ProductService';
  // Assuming you have a products data file
 
 

@@ -13,6 +13,7 @@ import Women from './pages/Women';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import ProductDetails from './pages/ProductDetails';
+import Cart from './pages/Cart';
 
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -30,6 +31,7 @@ function App() {
             <Route path="/Women" element={<Women/>} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
         </main>
        <Footer />
