@@ -7,31 +7,23 @@ const Cart = () => {
   const [cartItems, setCartItems] = useState([
     {
       id: 1,
-      name: "Classic White Shirt",
-      image: "https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=300",
-      price: 79.99,
+      name: "Classic Blue Shirt",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW9mMTsdR_7D-O5sUyec2hvmw-tXUXTyJTckNuQN0qiKC4FaQ9w6h4vxRHIU3U5aIXlFw&usqp=CAU",
+      price: 2099.00,
       quantity: 2,
       size: "M",
-      color: "White"
+      
     },
+    
     
     {
       id: 2,
-      name: "Denim Jacket",
-      image: "https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=300",
-      price: 129.99,
-      quantity: 1,
-      size: "L",
-      color: "Blue"
-    },
-    {
-      id: 3,
-      name: "Summer Dress",
-      image: "https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=300",
-      price: 89.99,
+      name: "Long Skirt",
+      image: "https://i5.walmartimages.com/asr/7d17f6ae-bb21-44bc-9009-490f0930de78.45ae3c1c6ef204280d3b9b28b2a701a9.jpeg",
+      price: 999.00,
       quantity: 1,
       size: "S",
-      color: "Floral"
+      
     }
   ]);
 
@@ -103,7 +95,6 @@ const Cart = () => {
                   <h3>{item.name}</h3>
                   <div className="item-options">
                     <span>Size: {item.size}</span>
-                    <span>Color: {item.color}</span>
                   </div>
                 </div>
 
@@ -124,8 +115,8 @@ const Cart = () => {
                 </div>
 
                 <div className="item-price">
-                  <span className="price">${(item.price * item.quantity).toFixed(2)}</span>
-                  <span className="unit-price">${item.price.toFixed(2)} each</span>
+                  <span className="price">Rs.{(item.price * item.quantity).toFixed(2)}</span>
+                  <span className="unit-price">Rs.{item.price.toFixed(2)} each</span>
                 </div>
 
                 <button
@@ -144,32 +135,25 @@ const Cart = () => {
             
             <div className="summary-row">
               <span>Subtotal</span>
-              <span>${getSubtotal().toFixed(2)}</span>
+              <span>Rs.{getSubtotal().toFixed(2)}</span>
             </div>
             
             <div className="summary-row">
               <span>Shipping</span>
-              <span>{getShipping() === 0 ? 'Free' : `$${getShipping().toFixed(2)}`}</span>
+              <span>{getShipping() === 0 ? 'Free' : `Rs.{getShipping().toFixed(2)}`}</span>
             </div>
             
             <div className="summary-row">
               <span>Tax</span>
-              <span>${getTax().toFixed(2)}</span>
+              <span>Rs.{getTax().toFixed(2)}</span>
             </div>
             
             <div className="summary-total">
               <span>Total</span>
-              <span>${getTotal().toFixed(2)}</span>
+              <span>Rs.{getTotal().toFixed(2)}</span>
             </div>
 
-            <div className="promo-code">
-              <input
-                type="text"
-                placeholder="Enter promo code"
-                className="promo-input"
-              />
-              <button className="btn btn-outline">Apply</button>
-            </div>
+           
 
             <button className="btn btn-primary checkout-btn">
               Proceed to Checkout
@@ -179,7 +163,7 @@ const Cart = () => {
               {getShipping() === 0 ? (
                 <p className="free-shipping">🎉 You qualify for free shipping!</p>
               ) : (
-                <p>Add ${(100 - getSubtotal()).toFixed(2)} more for free shipping</p>
+                <p>Add Rs.{(100 - getSubtotal()).toFixed(2)} more for free shipping</p>
               )}
             </div>
           </div>

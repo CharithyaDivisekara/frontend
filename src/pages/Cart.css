@@ -9,11 +9,11 @@
   align-items: center;
   margin-bottom: 2rem;
   padding-bottom: 1rem;
-  border-bottom: 2px solid var(--light-gray);
+  border-bottom: 2px solid var(light-purple);
 }
 
 .cart-header h1 {
-  color: var(--dark-gray);
+  color: var(--white);
   font-size: 2rem;
   font-weight: 700;
 }
@@ -27,7 +27,7 @@
 .empty-cart {
   text-align: center;
   padding: 4rem 2rem;
-  color: var(--dark-gray);
+  color: white;
 }
 
 .empty-cart svg {
@@ -43,7 +43,7 @@
 .empty-cart p {
   font-size: 1.1rem;
   margin-bottom: 2rem;
-  color: #6c757d;
+  color:purple;
 }
 
 .cart-content {
@@ -88,7 +88,7 @@
 }
 
 .item-details h3 {
-  color: var(--dark-gray);
+  color: white;
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
@@ -101,7 +101,7 @@
 }
 
 .item-options span {
-  color: #6c757d;
+  color:white;
   font-size: 0.9rem;
 }
 
@@ -112,6 +112,7 @@
   border: 2px solid var(--light-gray);
   border-radius: 8px;
   padding: 0.5rem;
+  color: white;
 }
 
 .quantity-btn {
@@ -125,14 +126,14 @@
 }
 
 .quantity-btn:hover {
-  background-color: var(--light-gray);
+  background-color: var(--accent-purple-hover);
 }
 
 .quantity {
   font-weight: 600;
   min-width: 30px;
   text-align: center;
-  color: var(--dark-gray);
+  color: white;
 }
 
 .item-price {
@@ -143,18 +144,18 @@
   display: block;
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--primary-purple);
+  color: white;
 }
 
 .unit-price {
   font-size: 0.9rem;
-  color: #6c757d;
+  color: white;
 }
 
 .remove-btn {
   background: none;
   border: none;
-  color: #dc3545;
+  color:white;
   cursor: pointer;
   padding: 0.5rem;
   border-radius: 4px;
@@ -162,7 +163,7 @@
 }
 
 .remove-btn:hover {
-  background-color: #f8f9fa;
+  background-color: red;
 }
 
 .cart-summary {
@@ -176,7 +177,7 @@
 }
 
 .cart-summary h3 {
-  color: var(--dark-gray);
+  color: white;
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
@@ -188,7 +189,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.8rem 0;
-  border-bottom: 1px solid var(--light-gray);
+  border-bottom: 1px solid  --light-purple;
+  color: white;
 }
 
 .summary-row:last-of-type {
@@ -202,24 +204,11 @@
   padding: 1rem 0;
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--primary-purple);
-  border-top: 2px solid var(--primary-purple);
+  color: white;
+  border-top: 2px solid white;
   margin-top: 1rem;
 }
 
-.promo-code {
-  display: flex;
-  gap: 0.5rem;
-  margin: 1.5rem 0;
-}
-
-.promo-input {
-  flex: 1;
-  padding: 10px;
-  border: 2px solid var(--light-gray);
-  border-radius: 6px;
-  font-size: 14px;
-}
 
 .checkout-btn {
   width: 100%;
@@ -232,18 +221,19 @@
 .shipping-info {
   text-align: center;
   padding: 1rem;
-  background-color: var(--light-gray);
+  background-color: white;
   border-radius: 8px;
 }
 
 .free-shipping {
-  color: #28a745;
+  color:purple;
   font-weight: 600;
 }
 
 .continue-shopping {
   margin-top: 2rem;
   text-align: center;
+  color:purple;
 }
 
 @media (max-width: 992px) {
