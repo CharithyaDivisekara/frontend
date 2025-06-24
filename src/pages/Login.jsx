@@ -41,6 +41,35 @@ const Login = () => {
     }
   };
 
+  const handleLogin = async (e) => {
+  e.preventDefault();
+  setIsLoading(true);
+
+  try {
+    const response = await fetch('http://localhost:8080/api/signup/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: formData.email,
+        password: formData.password
+      })
+    });
+
+    const result = await response.text();
+    if (result === "Login successful") {
+      // Redirect or show success
+    } else {
+      setErrors({ login: result });
+    }
+  } catch (error) {
+    setErrors({ login: "Server error" });
+  } finally {
+    setIsLoading(false);
+  }
+};
+
+
+
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
