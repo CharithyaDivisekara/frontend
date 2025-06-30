@@ -13,7 +13,6 @@ const ProductDetails = () => {
   const [activeTab, setActiveTab] = useState('description');
   const [relatedProducts, setRelatedProducts] = useState([]);
 
-
    useEffect(() => {
     const productData = productService.getProductById(parseInt(id));
     setProduct(productData);
@@ -277,3 +276,4 @@ const ProductDetails = () => {
 };
 
 export default ProductDetails;
+

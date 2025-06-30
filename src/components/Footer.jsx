@@ -65,7 +65,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="footer-bottom">
-          <p>&copy; 2024 Eshop. All rights reserved.</p>
+          <p>&copy; 2025 Eshop. All rights reserved.</p>
           <div className="footer-links">
             <a href="#">Terms of Service</a>
             <a href="#">Cookie Policy</a>

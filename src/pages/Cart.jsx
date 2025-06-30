@@ -15,7 +15,6 @@ const Cart = () => {
       
     },
     
-    
     {
       id: 2,
       name: "Long Skirt",
@@ -100,15 +99,12 @@ const Cart = () => {
 
                 <div className="quantity-controls">
                   <button
-                    className="quantity-btn"
-                    onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                    className="quantity-btn" onClick={() => updateQuantity(item.id, item.quantity - 1)}
                   >
                     <FaMinus />
                   </button>
                   <span className="quantity">{item.quantity}</span>
-                  <button
-                    className="quantity-btn"
-                    onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                  <button className="quantity-btn"onClick={() => updateQuantity(item.id, item.quantity + 1)}
                   >
                     <FaPlus />
                   </button>
@@ -159,19 +155,13 @@ const Cart = () => {
               Proceed to Checkout
             </button>
 
-            <div className="shipping-info">
-              {getShipping() === 0 ? (
-                <p className="free-shipping">🎉 You qualify for free shipping!</p>
-              ) : (
-                <p>Add Rs.{(100 - getSubtotal()).toFixed(2)} more for free shipping</p>
-              )}
-            </div>
+           
           </div>
         </div>
 
         <div className="continue-shopping">
           <Link to="/" className="btn btn-outline">
-            ← Continue Shopping
+            Continue Shopping
           </Link>
         </div>
       </div>

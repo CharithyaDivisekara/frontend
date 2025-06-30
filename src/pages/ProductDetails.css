@@ -413,9 +413,11 @@
 }
 
 .products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; /* or wrap if you want to allow multiple rows */
+  gap: 24px;
+  overflow-x: auto; /* allows horizontal scrolling if needed */
 }
 
 @media (max-width: 992px) {
@@ -468,3 +470,4 @@
     justify-content: center;
   }
 }
+

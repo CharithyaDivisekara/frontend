@@ -209,6 +209,23 @@
   margin-top: 1rem;
 }
 
+.btn-primary
+{
+  background-color: var(--dark-purple);
+  color: white;
+  border: 1px solid var(--primary-purple);
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.btn-primary:hover {
+  background-color: var(--accent-purple-hover);
+}
+
+
 
 .checkout-btn {
   width: 100%;

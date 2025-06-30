@@ -115,10 +115,79 @@ export const productService = {
     return mockProducts.filter(product => product.gender === 'men');
   },
 
-   // Get women's products
+  // Get women's products
   getWomenProducts: () => {
     return mockProducts.filter(product => product.gender === 'women');
   },
 
+  // Search products
+  searchProducts: (query) => {
+    const lowercaseQuery = query.toLowerCase();
+    return mockProducts.filter(product =>
+      product.name.toLowerCase().includes(lowercaseQuery) ||
+      product.category.toLowerCase().includes(lowercaseQuery) ||
+      product.brand.toLowerCase().includes(lowercaseQuery) ||
+      product.description.toLowerCase().includes(lowercaseQuery)
+    );
+  },
 
-} 
+  // Filter products
+  filterProducts: (filters) => {
+    let filteredProducts = [...mockProducts];
+
+    if (filters.gender) {
+      filteredProducts = filteredProducts.filter(product => product.gender === filters.gender);
+    }
+
+    if (filters.category) {
+      filteredProducts = filteredProducts.filter(product => product.category === filters.category);
+    }
+
+    if (filters.sizes && filters.sizes.length > 0) {
+      filteredProducts = filteredProducts.filter(product =>
+        product.sizes.some(size => filters.sizes.includes(size))
+      );
+    }
+
+    return filteredProducts;
+  },
+
+  // Sort products
+  sortProducts: (products, sortBy) => {
+    const sortedProducts = [...products];
+
+    switch (sortBy) {
+      case 'price-low':
+        return sortedProducts.sort((a, b) => a.price - b.price);
+      case 'price-high':
+        return sortedProducts.sort((a, b) => b.price - a.price);
+      case 'name':
+        return sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
+      case 'rating':
+        return sortedProducts.sort((a, b) => b.rating - a.rating);
+      case 'newest':
+        return sortedProducts.sort((a, b) => b.isNew - a.isNew);
+      default:
+        return sortedProducts;
+    }
+  },
+
+  // Get unique categories
+  getCategories: (gender = null) => {
+    let products = mockProducts;
+    if (gender) {
+      products = products.filter(product => product.gender === gender);
+    }
+    return [...new Set(products.map(product => product.category))];
+  },
+
+  // Get unique sizes
+  getSizes: (gender = null) => {
+    let products = mockProducts;
+    if (gender) {
+      products = products.filter(product => product.gender === gender);
+    }
+    const allSizes = products.flatMap(product => product.sizes);
+    return [...new Set(allSizes)];
+  }
+};

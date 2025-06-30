@@ -1,7 +1,7 @@
 import React from 'react'
 import './Women.css';
 import { FaFilter } from 'react-icons/fa';
-import{Product } from '../components/ProductCard'; // Assuming you have a ProductCard component
+import{Product } from '../components/ProductCard'; 
 import{ useState } from 'react';
 
 

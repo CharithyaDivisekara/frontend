@@ -2,8 +2,12 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import productService from '../services/ProductService';
+import { useNavigate } from 'react-router-dom';
+// ...existing code...
 import './Home.css';
 const Home = () => {
+  const navigate = useNavigate();
+ 
   
   return (
     <div className="home">
@@ -14,8 +18,11 @@ const Home = () => {
           <p>Explore our exclusive collection of trendy clothing for men and women</p>
           
           <div className="hero-links">
-            <Link to="/women" className="shop-woman-btn">Shop Women</Link> <br></br>
-            <Link to="/men" className="shop-men-btn">Shop Men</Link>
+           <button className="btn-primary"style={{ marginBottom: "10px" }}onClick={() => navigate("/women")}>Shop Women
+           </button>
+      <br />
+      <button className="btn-primary" onClick={() => navigate("/men")}> Shop Men
+      </button>
           </div>
         </div>
         <div className="hero-image">
