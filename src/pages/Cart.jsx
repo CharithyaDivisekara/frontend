@@ -8,7 +8,7 @@ const Cart = () => {
     {
       id: 1,
       name: "Classic Blue Shirt",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW9mMTsdR_7D-O5sUyec2hvmw-tXUXTyJTckNuQN0qiKC4FaQ9w6h4vxRHIU3U5aIXlFw&usqp=CAU",
+      image: "https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=400",
       price: 2099.00,
       quantity: 2,
       size: "M",
@@ -18,7 +18,7 @@ const Cart = () => {
     {
       id: 2,
       name: "Long Skirt",
-      image: "https://i5.walmartimages.com/asr/7d17f6ae-bb21-44bc-9009-490f0930de78.45ae3c1c6ef204280d3b9b28b2a701a9.jpeg",
+      image: "https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=400",
       price: 999.00,
       quantity: 1,
       size: "S",

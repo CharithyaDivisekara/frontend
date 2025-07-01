@@ -129,43 +129,17 @@ const ProductDetails = () => {
               </div>
             )}
 
-            {/* Quantity */}
-            <div className="selection-group">
-              <h4>Quantity:</h4>
-              <div className="quantity-controls">
-                <button
-                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  className="quantity-btn"
-                >
-                  -
-                </button>
-                <span className="quantity-display">{quantity}</span>
-                <button
-                  onClick={() => setQuantity(quantity + 1)}
-                  className="quantity-btn"
-                >
-                  +
-                </button>
-              </div>
-            </div>
+           
 
             {/* Action Buttons */}
             <div className="action-buttons">
               <button onClick={handleAddToCart} className="btn btn-primary add-to-cart">
-                Add to Cart - ${(product.price * quantity).toFixed(2)}
+                Add to Cart - Rs.{(product.price * quantity).toFixed(2)}
               </button>
-              <button onClick={handleAddToWishlist} className="btn btn-outline wishlist-btn">
-                <FaHeart /> Wishlist
-              </button>
+             
             </div>
 
-            {/* Product Features */}
-            <div className="product-features">
-              <div className="feature">
-                <FaUndo />
-                <span>30-day return policy</span>
-              </div>
-            </div>
+           
           </div>
         </div>
 
@@ -184,12 +158,6 @@ const ProductDetails = () => {
             >
               Reviews ({product.reviewCount})
             </button>
-            <button
-              className={activeTab === 'shipping' ? 'active' : ''}
-              onClick={() => setActiveTab('shipping')}
-            >
-              Shipping & Returns
-            </button>
           </div>
 
           <div className="tab-content">
@@ -198,11 +166,10 @@ const ProductDetails = () => {
                 <h3>Product Details</h3>
                 <p>This premium quality garment is crafted with attention to detail and designed for the modern lifestyle. Made from carefully selected materials, it offers both comfort and style.</p>
                 <ul>
-                  <li>Premium quality fabric</li>
+                  <li> Premium quality fabric</li>
                   <li>Comfortable fit</li>
                   <li>Durable construction</li>
                   <li>Easy care instructions</li>
-                  <li>Versatile design</li>
                 </ul>
               </div>
             )}
@@ -226,50 +193,15 @@ const ProductDetails = () => {
                   </div>
                   <p>"Great quality and perfect fit! Highly recommend this product."</p>
                 </div>
-                <div className="review-item">
-                  <div className="reviewer-info">
-                    <strong>John D.</strong>
-                    <div className="stars">{renderStars(4)}</div>
-                  </div>
-                  <p>"Good value for money. Fast shipping and excellent customer service."</p>
-                </div>
+               
               </div>
             )}
             
-            {activeTab === 'shipping' && (
-              <div className="shipping-content">
-                <h3>Shipping & Returns</h3>
-                <div className="shipping-info">
-                  <h4>Shipping Information</h4>
-                  <ul>
-                    <li>Orders processed within 1-2 business days</li>
-                    <li>Delivery time: 3-7 business days</li>
-                  </ul>
-                  
-                  <h4>Return Policy</h4>
-                  <ul>
-                    <li>30-day return window</li>
-                    <li>Items must be in original condition</li>
-                    <li>Free returns for defective items</li>
-                    
-                  </ul>
-                </div>
-              </div>
-            )}
+
           </div>
         </div>
 
-        {/* Related Products */}
-        {relatedProducts.length > 0 && (
-          <section className="related-products">
-            <h2>You Might Also Like</h2>
-            <div className="products-grid">
-              {relatedProducts.slice(0, 4).map(relatedProduct => (
-                <ProductCard key={relatedProduct.id} product={relatedProduct} />
-              ))}
-            </div>
-          </section>
-        )}
+       
       </div>
     </div>
   );

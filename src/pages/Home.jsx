@@ -26,7 +26,7 @@ const Home = () => {
           </div>
         </div>
         <div className="hero-image">
-          <img src="https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Fashion Collection" />
+          <img src="https://dfjx2uxqg3cgi.cloudfront.net/img/photo/227432/227432_tt.jpg?20210119064520" alt="Fashion Collection" />
         </div>
       </section>
 

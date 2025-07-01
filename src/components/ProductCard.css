@@ -58,8 +58,8 @@
   height: 40px;
   border: none;
   border-radius: 50%;
-  background-color: var(--white);
-  color: var(--primary-purple);
+  background-color: white;
+  color: ;
   font-size: 16px;
   cursor: pointer;
   display: flex;
@@ -71,34 +71,11 @@
 
 .wishlist-btn:hover,
 .cart-btn:hover {
-  background-color: var(--primary-purple);
-  color: var(--white);
+  background-color: white;
+  color: purple;
   transform: scale(1.1);
 }
 
-.discount-badge {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: #e74c3c;
-  color: var(--white);
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.new-badge {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: #27ae60;
-  color: var(--white);
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 600;
-}
 
 .product-info {
   padding: 1.5rem;
@@ -107,7 +84,7 @@
 .product-name {
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--dark-gray);
+  color: white;
   margin-bottom: 0.5rem;
   line-height: 1.4;
 }
@@ -136,7 +113,7 @@
 
 .rating-count {
   font-size: 0.9rem;
-  color: #6c757d;
+  color: white;
 }
 
 .product-price {
@@ -144,18 +121,19 @@
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 1rem;
+  color: white;
 }
 
 .original-price {
   font-size: 0.9rem;
-  color: #6c757d;
+  color: white;
   text-decoration: line-through;
 }
 
 .current-price {
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--primary-purple);
+  color: white;
 }
 
 .product-colors {

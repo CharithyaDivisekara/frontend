@@ -11,7 +11,7 @@ const mockProducts = [
     rating: 4.5,
     reviewCount: 128,
     sizes: ["S", "M", "L",],
-    brand: "StyleHub",
+
     isNew: false,
     isFeatured: true,
     description: "A timeless classic blue shirt perfect for any occasion."
@@ -26,7 +26,6 @@ const mockProducts = [
     rating: 4.7,
     reviewCount: 89,
     sizes: ["S", "M", "L"],
-    brand: "UrbanStyle",
     isNew: true,
     isFeatured: true,
     description: "Stylish denim jacket for a casual yet trendy look."
@@ -41,7 +40,6 @@ const mockProducts = [
     rating: 4.3,
     reviewCount: 156,
     sizes: ["S", "M", "L"],
-    brand: "ComfortFit",
     isNew: false,
     isFeatured: false,
     description: "Comfortable chinos perfect for everyday wear."
@@ -59,7 +57,6 @@ const mockProducts = [
     rating: 4.8,
     reviewCount: 245,
     sizes: ["S", "M", "L"],
-    brand: "SummerVibes",
     isNew: true,
     isFeatured: true,
     description: "A style that typically extends to the ankles or even the floor"
@@ -74,7 +71,6 @@ const mockProducts = [
     rating: 4.6,
     reviewCount: 178,
     sizes: ["S", "M", "L"],
-    brand: "LuxeFashion",
     isNew: false,
     isFeatured: true,
     description: "Elegant silk blouse for sophisticated styling."
@@ -89,7 +85,6 @@ const mockProducts = [
     rating: 4.7,
     reviewCount: 312,
     sizes: ["S", "M", "L"],
-    brand: "DenimCo",
     isNew: false,
     isFeatured: true,
     description: "Flattering high-waisted jeans with perfect fit."
@@ -189,5 +184,13 @@ export const productService = {
     }
     const allSizes = products.flatMap(product => product.sizes);
     return [...new Set(allSizes)];
-  }
+  },
+
+    // Get related products
+  getRelatedProducts: (category, gender) => {
+    return mockProducts.filter(
+      product => product.category === category && product.gender === gender
+    );
+  },
+
 };
