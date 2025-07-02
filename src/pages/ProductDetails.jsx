@@ -4,6 +4,8 @@ import { FaStar, FaHeart, FaTruck, FaUndo, FaShieldAlt } from 'react-icons/fa';
 import ProductCard from '../components/ProductCard';
 import { productService } from '../services/ProductService';
 import './ProductDetails.css';
+import { useCart } from '../context/CartContext';
+import { useNavigate } from 'react-router-dom';
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -12,6 +14,11 @@ const ProductDetails = () => {
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState('description');
   const [relatedProducts, setRelatedProducts] = useState([]);
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
+
+
+
 
    useEffect(() => {
     const productData = productService.getProductById(parseInt(id));
@@ -28,6 +35,9 @@ const ProductDetails = () => {
       alert('Please select size');
       return;
     }
+    addToCart(product, selectedSize, quantity);
+    navigate('/cart'); 
+  // Redirect to cart page after adding
     
     console.log('Added to cart:', {
       product: product.name,
