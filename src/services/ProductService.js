@@ -11,9 +11,7 @@ const mockProducts = [
     rating: 4.5,
     reviewCount: 128,
     sizes: ["S", "M", "L",],
-
     isNew: false,
-    isFeatured: true,
     description: "A timeless classic blue shirt perfect for any occasion."
   },
   {
@@ -27,7 +25,6 @@ const mockProducts = [
     reviewCount: 89,
     sizes: ["S", "M", "L"],
     isNew: true,
-    isFeatured: true,
     description: "Stylish denim jacket for a casual yet trendy look."
   },
   {
@@ -41,7 +38,6 @@ const mockProducts = [
     reviewCount: 156,
     sizes: ["S", "M", "L"],
     isNew: false,
-    isFeatured: false,
     description: "Comfortable chinos perfect for everyday wear."
   },
 
@@ -58,7 +54,6 @@ const mockProducts = [
     reviewCount: 245,
     sizes: ["S", "M", "L"],
     isNew: true,
-    isFeatured: true,
     description: "A style that typically extends to the ankles or even the floor"
   },
   {
@@ -72,7 +67,6 @@ const mockProducts = [
     reviewCount: 178,
     sizes: ["S", "M", "L"],
     isNew: false,
-    isFeatured: true,
     description: "Elegant silk blouse for sophisticated styling."
   },
   {
@@ -86,7 +80,6 @@ const mockProducts = [
     reviewCount: 312,
     sizes: ["S", "M", "L"],
     isNew: false,
-    isFeatured: true,
     description: "Flattering high-waisted jeans with perfect fit."
   }
 
@@ -95,10 +88,11 @@ const mockProducts = [
 
 
 export const productService = {
-  // Get all products
-  getAllProducts: () => {
-    return mockProducts;
+  getAllProducts: async () => {
+    const response = await fetch('http://localhost:8080/api/products');
+    return response.json();
   },
+
 
   // Get product by ID
   getProductById: (id) => {
@@ -121,7 +115,6 @@ export const productService = {
     return mockProducts.filter(product =>
       product.name.toLowerCase().includes(lowercaseQuery) ||
       product.category.toLowerCase().includes(lowercaseQuery) ||
-      product.brand.toLowerCase().includes(lowercaseQuery) ||
       product.description.toLowerCase().includes(lowercaseQuery)
     );
   },
@@ -147,25 +140,6 @@ export const productService = {
     return filteredProducts;
   },
 
-  // Sort products
-  sortProducts: (products, sortBy) => {
-    const sortedProducts = [...products];
-
-    switch (sortBy) {
-      case 'price-low':
-        return sortedProducts.sort((a, b) => a.price - b.price);
-      case 'price-high':
-        return sortedProducts.sort((a, b) => b.price - a.price);
-      case 'name':
-        return sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
-      case 'rating':
-        return sortedProducts.sort((a, b) => b.rating - a.rating);
-      case 'newest':
-        return sortedProducts.sort((a, b) => b.isNew - a.isNew);
-      default:
-        return sortedProducts;
-    }
-  },
 
   // Get unique categories
   getCategories: (gender = null) => {

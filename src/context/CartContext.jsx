@@ -16,9 +16,9 @@ export const CartProvider = ({ children }) => {
         return prev.map(item =>
           item.id === product.id && item.size === size
             ? { ...item, quantity: item.quantity + quantity }
-            : item
+            : item 
         );
-      }
+      } 
       return [...prev, { ...product, size, quantity }];
     });
   };

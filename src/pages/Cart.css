@@ -27,17 +27,18 @@
 .empty-cart {
   text-align: center;
   padding: 4rem 2rem;
-  color: white;
+  color: var(--white);
 }
 
 .empty-cart svg {
-  color: var(--accent-purple);
+  color: var(--white);
   margin-bottom: 2rem;
 }
 
 .empty-cart h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
+  color:var(--white); ;
 }
 
 .empty-cart p {
