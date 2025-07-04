@@ -12,7 +12,7 @@ const Header = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      // Navigate to search results page (you can implement this later)
+      
       console.log('Searching for:', searchQuery);
     }
   };
