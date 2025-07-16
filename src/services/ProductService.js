@@ -41,6 +41,23 @@ const mockProducts = [
     description: "Comfortable chinos perfect for everyday wear."
   },
 
+
+   {
+    id: 4,
+    name: "Casual Chinos",
+    price: 3099.00,
+    image: "https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=400",
+    category: "pants",
+    gender: "men",
+    rating: 4.3,
+    reviewCount: 156,
+    sizes: ["S", "M", "L"],
+    isNew: false,
+    description: "Comfortable chinos perfect for everyday wear."
+  },
+
+  
+
    // Women's Products
   {
     id: 6,
@@ -69,6 +86,7 @@ const mockProducts = [
     isNew: false,
     description: "Elegant silk blouse for sophisticated styling."
   },
+  
   {
     id: 8,
     name: "High-Waisted Jeans",
@@ -81,9 +99,21 @@ const mockProducts = [
     sizes: ["S", "M", "L"],
     isNew: false,
     description: "Flattering high-waisted jeans with perfect fit."
+  },
+  {
+    id: 9,
+    name: "White Colour Blows ",
+    price: 3099.00,
+    image: "https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=400",
+    category: "bottoms",
+    gender: "women",
+    rating: 4,
+    reviewCount: 57,
+    sizes: ["S", "M", "L"],
+    isNew: false,
+    description: "Flattering high-waisted jeans with perfect fit."
   }
-
-
+  
 ];
 
 
@@ -92,6 +122,10 @@ export const productService = {
     const response = await fetch('http://localhost:8080/api/products');
     return response.json();
   },
+// return mockProducts; 
+getAllProducts: async () => {
+  return mockProducts;
+},
 
 
   // Get product by ID

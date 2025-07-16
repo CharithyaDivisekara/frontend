@@ -76,6 +76,7 @@
   transform: scale(1.1);
 }
 
+
 .product-info {
   padding: 1.5rem;
 }
@@ -133,6 +134,26 @@
   font-size: 1.2rem;
   font-weight: 700;
   color: white;
+}
+
+.product-colors {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.color-option {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.color-option:hover {
+  transform: scale(1.2);
 }
 
 @media (max-width: 768px) {

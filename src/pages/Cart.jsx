@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { FaTrash, FaMinus, FaPlus, FaShoppingBag } from 'react-icons/fa';
 import './Cart.css';
 import { useCart } from '../context/CartContext';
+//import React,{useEffect} from 'react';
 
 const Cart = () => {
   const { cartItems, removeFromCart, updateQuantity } = useCart();
@@ -12,16 +13,23 @@ const Cart = () => {
   };
 
   const getShipping = () => {
-    return getSubtotal() > 100 ? 0 : 9.99;
+    return getSubtotal() > 1000 ? 0 : 100;
   };
 
   const getTax = () => {
-    return getSubtotal() * 0.08; // 8% tax
+    return getSubtotal() * 0.02; 
   };
 
   const getTotal = () => {
     return getSubtotal() + getShipping() + getTax();
   };
+
+ // useEffect(() => {
+  //if (!localStorage.getItem("isLoggedIn")) {
+   // alert("Please login first");
+//window.location.href = "/login";
+ // }
+//}, []);
 
   if (cartItems.length === 0) {
     return (

@@ -17,12 +17,9 @@ const Home = () => {
           <h1>Discover Your Perfect Style</h1>
           <p>Explore our exclusive collection of trendy clothing for men and women</p>
           
-          <div className="hero-links">
-           <button className="btn-primary"style={{ marginBottom: "10px" }}onClick={() => navigate("/women")}>Shop Women
-           </button>
-      <br />
-      <button className="btn-primary" onClick={() => navigate("/men")}> Shop Men
-      </button>
+          <div className="hero-buttons">
+            <Link to="/get-started" className=" btn-primary">Get Started</Link>
+            <Link to="/about" className=" btn-outline">Learn More</Link>
           </div>
         </div>
         <div className="hero-image">

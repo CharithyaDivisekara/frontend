@@ -3,7 +3,7 @@ import './Women.css';
 import { FaFilter } from 'react-icons/fa';
 import ProductCard from '../components/ProductCard'; 
 import { productService } from '../services/ProductService';
-// ...rest of your code...
+
 
 
 const women = () => {
@@ -16,9 +16,9 @@ const women = () => {
   const [showFilters, setShowFilters] = useState(false);
 
 useEffect(() => {
-    const menProducts = productService.getMenProducts();
-    setProducts(menProducts);
-    setFilteredProducts(menProducts);
+    const womenProducts = productService.getWomenProducts();
+    setProducts(womenProducts);
+    setFilteredProducts(womenProducts);
   }, []);
 
   useEffect(() => {

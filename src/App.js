@@ -14,6 +14,10 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import ProductDetails from './pages/ProductDetails';
 import Cart from './pages/Cart';
+import AdminLogin from './pages/AdminLogin';
+import UserTypeSelection from './pages/UserTypeSelection';
+
+
 
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -33,6 +37,8 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/product/:id" element={<ProductDetails />} />
+            <Route path="/get-started" element={<UserTypeSelection />} />
+             <Route path="/admin-login" element={<AdminLogin />} />
           </Routes>
         </main>
        <Footer />
