@@ -4,23 +4,15 @@ import { FaUserShield, FaEye, FaEyeSlash } from 'react-icons/fa';
 import './AdminLogin.css';
 import { useAuth } from '../context/AuthContext';
 
-
 const AdminLogin = () => {
   const [adminId, setAdminId] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
-  
-  
+
   const { loginAsAdmin } = useAuth();
   const navigate = useNavigate();
-
-  // Demo admin credentials
-  const ADMIN_CREDENTIALS = {
-    adminId: 'ADMIN001',
-    password: 'admin123'
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,22 +20,21 @@ const AdminLogin = () => {
     setError('');
 
     try {
-      // Simulate API call delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const response = await fetch('http://localhost:8080/api/admin/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          adminId,
+          password
+        })
+      });
 
-      // Check credentials
-      if (adminId === ADMIN_CREDENTIALS.adminId && password === ADMIN_CREDENTIALS.password) {
-        const adminData = {
-          id: adminId,
-          name: 'Admin User',
-          role: 'admin',
-          loginTime: new Date().toISOString()
-        };
-        
-        loginAsAdmin(adminData);
+      const result = await response.text();
+      if (result === "Login successful") {
+        loginAsAdmin({ id: adminId, name: 'Admin User', role: 'admin', loginTime: new Date().toISOString() });
         navigate('/admin-dashboard');
       } else {
-        setError('Invalid Admin ID or Password');
+        setError(result);
       }
     } catch (error) {
       setError('Login failed. Please try again.');
