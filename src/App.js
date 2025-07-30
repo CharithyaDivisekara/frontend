@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import React from 'react';
 import './App.css';
-
 import Header from './components/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './pages/Login';
@@ -16,6 +15,7 @@ import ProductDetails from './pages/ProductDetails';
 import Cart from './pages/Cart';
 import AdminLogin from './pages/AdminLogin';
 import UserTypeSelection from './pages/UserTypeSelection';
+import AdminDashboard from './pages/AdminDashboard';
 
 
 
@@ -39,6 +39,7 @@ function App() {
             <Route path="/product/:id" element={<ProductDetails />} />
             <Route path="/get-started" element={<UserTypeSelection />} />
              <Route path="/admin-login" element={<AdminLogin />} />
+             <Route path="/admin-dashboard" element={<AdminDashboard />} />
           </Routes>
         </main>
        <Footer />
