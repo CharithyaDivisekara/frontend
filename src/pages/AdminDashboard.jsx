@@ -359,19 +359,10 @@ const AdminDashboard = () => {
                             id="sizes"
                             value={formData.sizes.join(', ')}
                             onChange={(e) => handleArrayInputChange(e, 'sizes')}
-                            placeholder="S, M, L, XL"
+                            placeholder="S, M, L, "
                           />
                         </div>
-                        <div className="form-group">
-                          <label htmlFor="colors">Colors (comma separated)</label>
-                          <input
-                            type="text"
-                            id="colors"
-                            value={formData.colors.join(', ')}
-                            onChange={(e) => handleArrayInputChange(e, 'colors')}
-                            placeholder="Red, Blue, Black"
-                          />
-                        </div>
+                       
                       </div>
 
                       <div className="form-row">

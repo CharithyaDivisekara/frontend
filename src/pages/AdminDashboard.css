@@ -32,13 +32,14 @@
 .logout-btn {
   background-color: transparent;
   background-color: var(--white);
-  color: var(--primary-purple);
+  color: white;
   
 }
 
 .logout-btn:hover {
   border: 2px solid var(--white);
   color: var(--white);
+  
 }
 
 .dashboard-content {
