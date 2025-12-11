@@ -1,70 +1,111 @@
-# Getting Started with Create React App
+# EShop Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains the frontend for the EShop application — a React single-page application for browsing products, viewing details, and managing a shopping cart. The frontend currently uses mock product data (see `src/services/ProductService.js`) but includes an example backend API URL and instructions to connect to the backend.
 
-## Available Scripts
+**Backend repository:** https://github.com/CharithyaDivisekara/backend
 
-In the project directory, you can run:
+**Tech stack:**
+- **React** (Create React App)
+- **Bootstrap / React-Bootstrap** for UI
+- **react-router-dom** for routing
 
-### `npm start`
+**Quick status**: The app ships with a local mock data service in `src/services/ProductService.js`. To use a real backend, follow the section "Connecting to the backend" below.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Project structure (important files)**
+- `src/` — application source code
+  - `src/services/ProductService.js` — product service (currently returns mock data)
+  - `src/components/` — shared components (`Header`, `Footer`, `ProductCard`, etc.)
+  - `src/pages/` — route pages (`Home`, `ProductDetails`, `Cart`, `Login`, etc.)
+- `public/` — static assets and `index.html`
+- `package.json` — scripts and dependencies
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Prerequisites
+- Node.js (v14+ recommended)
+- npm (bundled with Node) or yarn
 
-### `npm test`
+## Install
+Open a Windows `cmd.exe` terminal in the project root and run:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```cmd
+npm install
+```
 
-### `npm run build`
+## Run (development)
+Start the dev server:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```cmd
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This opens the app at `http://localhost:3000` by default.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Build
+Create a production build:
 
-### `npm run eject`
+```cmd
+npm run build
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Tests
+Run the test runner (from Create React App):
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```cmd
+npm test
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Connecting to the backend
+The backend repo is available here:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+https://github.com/CharithyaDivisekara/backend
 
-## Learn More
+Notes about the current frontend integration:
+- `src/services/ProductService.js` currently returns `mockProducts` (mock data). There is an example `fetch('http://localhost:8080/api/products')` call in the file, but the exported service is configured to return the mock list. To switch the frontend to call your backend API, update `ProductService.js` to use an environment-based API base URL and the built-in `fetch` calls. Example approach:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Add an environment variable (create a `.env` file in the project root):
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```text
+REACT_APP_API_BASE_URL=http://localhost:8080
+```
 
-### Code Splitting
+2. Update `src/services/ProductService.js` to use the env var, e.g.:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```javascript
+const API_BASE = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8080';
 
-### Analyzing the Bundle Size
+export const productService = {
+  getAllProducts: async () => {
+    const res = await fetch(`${API_BASE}/api/products`);
+    return res.json();
+  },
+  getProductById: async (id) => {
+    const res = await fetch(`${API_BASE}/api/products/${id}`);
+    return res.json();
+  },
+  // other methods using the API...
+};
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+3. Start your backend locally (by default the example URL above expects it on port `8080`). Then run `npm start` for the frontend.
 
-### Making a Progressive Web App
+If you prefer to set the environment variable just for the current Windows `cmd` session, run:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```cmd
+set "REACT_APP_API_BASE_URL=http://localhost:8080"
+npm start
+```
 
-### Advanced Configuration
+## Notes & recommendations
+- The project is bootstrapped with Create React App and uses React 19. The `react-scripts` scripts in `package.json` are standard.
+- The `ProductService.js` file currently provides useful mock data that helps the UI develop independently of the backend. When switching to the real backend, consider keeping a toggle (or feature flag) for mock vs real API for easier development and testing.
+- Review CORS settings on the backend when calling from `http://localhost:3000` (enable CORS or use a proxy during development).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Deployment
+- Build with `npm run build` and deploy the contents of `build/` to your static host (Netlify, Vercel, GitHub Pages, or serve behind a Node/NGINX server).
 
-### Deployment
+## Contributing
+- Fork the repo, create a branch, make changes, and open a pull request.
+- For backend integration changes, include notes about required environment variables and API contract changes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
